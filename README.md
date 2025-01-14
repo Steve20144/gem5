@@ -24,7 +24,7 @@ Sure! Here's your LaTeX document converted into Markdown:
 
 ---
 
-## Chapter 1: Introduction & Preface
+## Introduction & Preface
 
 % Introduce gem5, the purpose of the report, and provide an overview of what will be covered.
 
@@ -42,7 +42,7 @@ The purpose of this project was to familiarize the students with the gem5 tool, 
 
 For this project, a Virtual Machine with gem5 installed was utilized to avoid unnecessary installation and dependency issues. The VM was provided by the assignment PDF and was executed on VirtualBox with 12 processors and 16GB of RAM.
 
-## Chapter 2: Exercises
+## Exercises
 
 % Outline the objectives, procedures, and expected outcomes of the first exercise.
 
@@ -348,7 +348,7 @@ It is evident that the performance has increased compared to prior simulations. 
 
 *(Content to be added.)*
 
-## Chapter 3: Issues
+## Issues
 
 % Discuss any challenges or problems encountered during the project and how they were addressed.
 
