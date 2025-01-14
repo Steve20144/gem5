@@ -356,4 +356,3 @@ It is evident that the performance has increased compared to prior simulations. 
 
 ---
 
-**Note:** Ensure to replace the placeholder sections for the second and third exercises and the issues chapter with the relevant content as needed.
