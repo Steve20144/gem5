@@ -124,16 +124,12 @@ The first exercise aims at setting the foundations for understanding the functio
 
 #### Second Question
 
-**""**  
-Besides the output file `stats.txt` generated at the end of the simulation, gem5 also produces `config.ini` and `config.json` files that provide information about the simulated system. 
 
+**"Besides the output file `stats.txt` generated at the end of the simulation, gem5 also produces `config.ini` and `config.json` files that provide information about the simulated system. 
 a. Use these files to verify your answer to the first question by including the relevant fields. 
-
 b. What are `sim_seconds`, `sim_insts`, and `host_inst_rate`?
-
 c. What is the total number of committed instructions, and why does this number differ from the statistics presented by gem5?
-
-d. How many times was the L2 cache accessed, and how could you calculate these accesses if they were not provided by the simulator?
+d. How many times was the L2 cache accessed, and how could you calculate these accesses if they were not provided by the simulator?"**
 
 Using the **`config.ini`**, the above information can be verified as follows:
 
