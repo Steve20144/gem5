@@ -73,3 +73,7 @@ The first exercise aims at setting the foundations for understanding the functio
   }
 
 It is clear that it involves three different cpu models, some of which will be further discussed later. The desired CPU type can be set by including a --cpu argument in the bash command. For example:
+
+```bash
+/build/ARM/gem5.opt -d hello_result configs/example/arm/starter_se.py --cpu="minor" 
+"tests/test-progs/hello/bin/arm/linux/hello" 
