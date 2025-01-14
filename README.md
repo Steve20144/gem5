@@ -26,7 +26,7 @@ Sure! Here's your LaTeX document converted into Markdown:
 
 ## Introduction & Preface
 
-% Introduce gem5, the purpose of the report, and provide an overview of what will be covered.
+
 
 gem5 is an open-source, modular simulation platform widely used in computer architecture research and development. It allows researchers and engineers to model and analyze the behavior of computer systems, including CPUs, memory hierarchies, caches, and interconnects. By providing a flexible and extensible framework, gem5 supports multiple processor architectures such as x86, ARM, and RISC-V, as well as various system configurations.
 
@@ -38,13 +38,12 @@ The purpose of this project was to familiarize the students with the gem5 tool, 
 
 ### Environment Setup
 
-% Describe the system requirements, installation steps, and verification process for setting up gem5.
+
 
 For this project, a Virtual Machine with gem5 installed was utilized to avoid unnecessary installation and dependency issues. The VM was provided by the assignment PDF and was executed on VirtualBox with 12 processors and 16GB of RAM.
 
 ## Exercises
 
-% Outline the objectives, procedures, and expected outcomes of the first exercise.
 
 The first exercise aims at setting the foundations for understanding the functionality and operation of the gem5 simulation tool. This includes an initial read of the gem5 documentation, a fundamental exploration of the various CPU models, and an evaluation of the significance of the `stats.txt` file in performance analysis. Moreover, the exercise encourages students to experiment with different memory configurations, CPU architectures, and diverse CPU frequencies to gain practical insights into their impact on system behavior and performance.
 
@@ -126,7 +125,15 @@ The first exercise aims at setting the foundations for understanding the functio
 #### Second Question
 
 **""**  
-*(It appears the second question content is missing in your LaTeX document.)*
+Besides the output file `stats.txt` generated at the end of the simulation, gem5 also produces `config.ini` and `config.json` files that provide information about the simulated system. 
+
+a. Use these files to verify your answer to the first question by including the relevant fields. 
+
+b. What are `sim_seconds`, `sim_insts`, and `host_inst_rate`?
+
+c. What is the total number of committed instructions, and why does this number differ from the statistics presented by gem5?
+
+d. How many times was the L2 cache accessed, and how could you calculate these accesses if they were not provided by the simulator?
 
 Using the **`config.ini`**, the above information can be verified as follows:
 
