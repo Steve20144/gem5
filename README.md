@@ -26,9 +26,9 @@ date: "January 2025"
 
 ---
 
-## Chapter 1: Introduction & Preface
+## Chapter 1: Introduction & Setup
 
-% Introduce gem5, the purpose of the report, and provide an overview of what will be covered.
+
 
 gem5 is an open-source, modular simulation platform widely used in computer architecture research and development. It allows researchers and engineers to model and analyze the behavior of computer systems, including CPUs, memory hierarchies, caches, and interconnects. By providing a flexible and extensible framework, gem5 supports multiple processor architectures such as x86, ARM, and RISC-V, as well as various system configurations.
 
@@ -40,13 +40,13 @@ The purpose of this project was to familiarize the students with the gem5 tool, 
 
 ### Environment Setup
 
-% Describe the system requirements, installation steps, and verification process for setting up gem5.
+
 
 For this project, a Virtual Machine with gem5 installed was utilized to avoid unnecessary installation and dependency issues. The VM was provided by the assignment PDF and was executed on VirtualBox with 12 processors and 16GB of RAM.
 
 ## Chapter 2: Exercises
 
-% Outline the objectives, procedures, and expected outcomes of the first exercise.
+
 
 The first exercise aims at setting the foundations for understanding the functionality and operation of the gem5 simulation tool. This includes an initial read of the gem5 documentation, a fundamental exploration of the various CPU models, and an evaluation of the significance of the `stats.txt` file in performance analysis. Moreover, the exercise encourages students to experiment with different memory configurations, CPU architectures, and diverse CPU frequencies to gain practical insights into their impact on system behavior and performance.
 
@@ -71,3 +71,5 @@ The first exercise aims at setting the foundations for understanding the functio
                HPI.HPI_WalkCache,
                HPI.HPI_L2)
   }
+
+It is clear that it involves three different cpu models, some of which will be further discussed later. The desired CPU type can be set by including a --cpu argument in the bash command. For example:
