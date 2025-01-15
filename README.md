@@ -555,6 +555,20 @@ The simulation results indicate that this particular benchmark is affected by th
 
 
 ## LIBM
+It is clear that this benchmark's CPI is highly affected by the cache line size. The Table below includes some combinations of diferent cache line sizes, L2 cache sizes and associativities of 4,8 and 16.
+| **Benchmark**                                                      | **CPI**   | **L1 D-Cache Miss Rate** | **L1 I-Cache Miss Rate** | **L2 Cache Miss Rate** |
+|--------------------------------------------------------------------|-----------|--------------------------|--------------------------|------------------------|
+| speclibm_l1i32kB_l1d64kB_l22MB_l2assoc4_line64_cpu1GHz             | 2.623265  | 0.060971                 | 0.000094                 | 0.999944              |
+| speclibm_l1i32kB_l1d64kB_l22MB_l2assoc4_line128_cpu1GHz            | 1.990458  | 0.030487                 | 0.000112                 | 0.999799              |
+| speclibm_l1i32kB_l1d64kB_l22MB_l2assoc8_line64_cpu1GHz             | 2.623265  | 0.060971                 | 0.000094                 | 0.999944              |
+| speclibm_l1i32kB_l1d64kB_l22MB_l2assoc8_line128_cpu1GHz            | 1.990458  | 0.030487                 | 0.000112                 | 0.999799              |
+| speclibm_l1i32kB_l1d64kB_l24MB_l2assoc4_line64_cpu1GHz             | 2.620756  | 0.060971                 | 0.000094                 | 0.999944              |
+| speclibm_l1i32kB_l1d64kB_l24MB_l2assoc4_line128_cpu1GHz            | 1.989132  | 0.030487                 | 0.000112                 | 0.999799              |
+| speclibm_l1i32kB_l1d64kB_l24MB_l2assoc8_line64_cpu1GHz             | 2.620756  | 0.060971                 | 0.000094                 | 0.999944              |
+| speclibm_l1i32kB_l1d64kB_l24MB_l2assoc8_line128_cpu1GHz            | 1.989132  | 0.030487                 | 0.000112                 | 0.999799              |
+| speclibm_l1i32kB_l1d64kB_l24MB_l2assoc16_line128_cpu1GHz           | 1.989132  | 0.030487                 | 0.000112                 | 0.999799              |
+| speclibm_l1i32kB_l1d64kB_l24MB_l2assoc16_line256_cpu1GHz           | 1.653896  | 0.015244                 | 0.000134                 | 0.999474              |
+
 
 ### Third Exercise
 
