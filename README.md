@@ -520,7 +520,7 @@ Here is a table that compares the results of the **mcf** benchmark for different
 
 
 ## SJENG
-For this particular benchmark, the L2 cache miss-rate was particularly high. This implied that the decision to keep cache associativities constant was not working for this particular Benchmark. 
+For this particular benchmark, the CPI as well as the L2 cache miss-rate was particularly high. This implied that the decision to keep cache associativities constant was not working for this particular Benchmark. 
 ### Associativy Constant
 | **Configuration**                             | **CPI**    | **L1 D-Cache Miss Rate** | **L1 I-Cache Miss Rate** | **L2 Cache Miss Rate** |
 |-----------------------------------------------|------------|--------------------------|--------------------------|------------------------|
@@ -541,7 +541,17 @@ For this particular benchmark, the L2 cache miss-rate was particularly high. Thi
 | specsjeng_l1i64kB_l1d128kB_l24MB_line64       | 7.038696   | 0.121831                 | 0.000019                 | 0.999983              |
 | specsjeng_l1i64kB_l1d128kB_l24MB_line128      | 4.972596   | 0.060921                 | 0.000013                 | 0.999877              |
 
-### L1 & L2 Cache sizes Constant
+### L1 & L2 Cache sizes Constant // Associativity 8 16
+The simulation results indicate that this particular benchmark is affected by the cache line size and not by the associativity. This is evident in the following simulation results.
+| **Benchmark**                                                      | **CPI**   | **L1 D-Cache Miss Rate** | **L1 I-Cache Miss Rate** | **L2 Cache Miss Rate** |
+|--------------------------------------------------------------------|-----------|--------------------------|--------------------------|------------------------|
+| specsjeng_l1i64kB_l1iassoc4_l1d64kB_l1dassoc4_l24MB_l2assoc8_line128_cpu1GHz_new | 4.972548  | 0.060918                 | 0.000013                 | 0.999973              |
+| specsjeng_l1i64kB_l1iassoc4_l1d64kB_l1dassoc4_l24MB_l2assoc8_line256_cpu1GHz_new | 3.714674  | 0.030461                 | 0.000009                 | 0.999950              |
+| specsjeng_l1i64kB_l1iassoc4_l1d64kB_l1dassoc4_l24MB_l2assoc16_line128_cpu1GHz_new | 4.972063  | 0.060918                 | 0.000013                 | 0.999973              |
+| specsjeng_l1i64kB_l1iassoc4_l1d64kB_l1dassoc4_l24MB_l2assoc16_line256_cpu1GHz_new | 3.714674  | 0.030461                 | 0.000009                 | 0.999950              |
+| specsjeng_l1i64kB_l1iassoc4_l1d64kB_l1dassoc4_l24MB_l2assoc16_line_cpu1GHz_new_256cacheline | 3.714674  | 0.030461                 | 0.000009                 | 0.999950              |
+| specsjeng_l1i64kB_l1iassoc4_l1d64kB_l1dassoc4_l24MB_l2assoc8_line_cpu1GHz_new_256cacheline  | 3.714674  | 0.030461                 | 0.000009                 | 0.999950              |
+
 
 
 ## LIBM
