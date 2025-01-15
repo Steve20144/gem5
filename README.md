@@ -295,8 +295,6 @@ The gem5 simulator offers various **in-order CPU models**, each with specific ch
 
 **"Write a program in C that implements the Fibonacci sequence and execute it in gem5 using different CPU models while keeping all other parameters the same. Use the TimingSimpleCPU and MinorCPU models."**
 
-*(All of the generated files from the simulations will be included in the final zip.)*
-
 It is known that the statistics that are related to execution time are the following.
 
 #### Execution Time Metrics Comparison with Default Settings
@@ -381,7 +379,27 @@ Create graphs to visualize this information for all the benchmarks. What do you 
 | mcf       | 0.064955            | 1.299095   | 0.023612              | 0.002108              | 0.055046           |
 | jeng      | 0.513528            | 10.270554  | 0.00002               | 0.121831              | 0.999972           |
 
+### Third Question
 
+**"Run the benchmarks in gem5 again in the same way as before, but this time add the parameters `--cpu-clock=1GHz` and `--cpu-clock=3GHz`. Examine the `stats.txt` files from the three executions of the program (the initial one and the ones with 1GHz and 3GHz) and identify the information about the clock. You will find two entries: one for `system.clk_domain.clock` and one for `cpu_cluster.clk_domain.clock`. Can you explain what is clocked at 1GHz/3GHz and what is clocked at the default GHz? Why do you think this happens?  
+Refer to the `config.json` file corresponding to the system with 1GHz. By searching for information about the clock, can you provide a clearer answer?  
+If we add another processor, what do you estimate its frequency will be?  
+Observe the execution times of the benchmarks for systems with different clocks. Is there perfect scaling? Can you provide an explanation if there is no perfect scaling?  "**
+
+
+1. **What is clocked at 1 GHz/3 GHz or default?**
+   - Default: Both `system.clk_domain.clock` and `cpu_cluster.clk_domain.clock` follow default settings (assumed 1 GHz unless explicitly set).
+   - With `--sys-clock=1GHz`: Both domains clocked at **1 GHz**.
+   - With `--sys-clock=3GHz`: Both domains clocked at **3 GHz**.
+
+2. **What happens if another processor is added?**
+   - It inherits the clock frequency of the `system.clk_domain.clock` (e.g., 1 GHz or 3 GHz).
+
+3. **Is there perfect scaling?**
+   - No. Execution times show improvement (e.g., 0.16 s at 1 GHz to 0.058 s at 3 GHz) but not a perfect 3x speedup.
+
+4. **Why is scaling not perfect?**
+   - Due to architectural constraints, memory bottlenecks, and fixed simulation overheads unrelated to clock frequency.
 
 
 ### Third Exercise
