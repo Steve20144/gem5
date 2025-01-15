@@ -372,6 +372,18 @@ You can obtain this information from the `stats.txt` files. (Hint: for the first
 Create graphs to visualize this information for all the benchmarks. What do you observe?"**
 
 
+
+| Benchmark | Execution Time (s) | CPI        | L1 I-Cache Miss Rate | L1 D-Cache Miss Rate | L2 Cache Miss Rate |
+|-----------|---------------------|------------|-----------------------|-----------------------|--------------------|
+| hmmer     | 0.059396            | 1.187917   | 0.000221              | 0.001637              | 0.07776            |
+| bzip      | 0.083982            | 1.67965    | 0.000077              | 0.014798              | 0.282163           |
+| libm      | 0.174671            | 3.493415   | 0.000094              | 0.060972              | 0.999944           |
+| mcf       | 0.064955            | 1.299095   | 0.023612              | 0.002108              | 0.055046           |
+| jeng      | 0.513528            | 10.270554  | 0.00002               | 0.121831              | 0.999972           |
+
+
+
+
 ### Third Exercise
 
 % Explain the objectives, procedures, and expected outcomes of the third exercise.
