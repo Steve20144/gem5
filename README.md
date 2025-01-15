@@ -479,9 +479,46 @@ Here are the results for each benchmark simulation. The Cache associativities we
 
 
 
-## BZIP
-
 ## MCF
+Here is a table that compares the results of the **mcf** benchmark for different hardware configurations:
+
+| **Configuration**                             | **CPI**   | **L1 D-Cache Miss Rate** | **L1 I-Cache Miss Rate** | **L2 Cache Miss Rate** |
+|-----------------------------------------------|-----------|--------------------------|--------------------------|------------------------|
+| l1i32kB_l1d64kB_l22MB_line64_cpu1GHz          | 1.279422  | 0.002108                 | 0.023627                 | 0.055046              |
+| l1i32kB_l1d64kB_l22MB_line128_cpu1GHz         | 1.320485  | 0.001384                 | 0.034839                 | 0.020630              |
+| l1i32kB_l1d64kB_l24MB_line64_cpu1GHz          | 1.279161  | 0.002108                 | 0.023626                 | 0.054613              |
+| l1i32kB_l1d64kB_l24MB_line128_cpu1GHz         | 1.320286  | 0.001384                 | 0.034838                 | 0.020419              |
+| l1i32kB_l1d128kB_l22MB_line64_cpu1GHz         | 1.278449  | 0.001932                 | 0.023627                 | 0.055391              |
+| l1i32kB_l1d128kB_l22MB_line128_cpu1GHz        | 1.319366  | 0.001180                 | 0.034835                 | 0.020749              |
+| l1i32kB_l1d128kB_l24MB_line64_cpu1GHz         | 1.278180  | 0.001932                 | 0.023627                 | 0.054963              |
+| l1i32kB_l1d128kB_l24MB_line128_cpu1GHz        | 1.319174  | 0.001180                 | 0.034834                 | 0.020544              |
+| l1i64kB_l1d64kB_l22MB_line64_cpu1GHz          | 1.139457  | 0.002108                 | 0.000018                 | 0.711865              |
+| l1i64kB_l1d64kB_l22MB_line128_cpu1GHz         | 1.113017  | 0.001384                 | 0.000020                 | 0.529297              |
+| l1i64kB_l1d64kB_l24MB_line64_cpu1GHz          | 1.139146  | 0.002108                 | 0.000018                 | 0.706401              |
+| l1i64kB_l1d64kB_l24MB_line128_cpu1GHz         | 1.112796  | 0.001384                 | 0.000020                 | 0.524081              |
+| l1i64kB_l1d128kB_l22MB_line64_cpu1GHz         | 1.138112  | 0.001932                 | 0.000018                 | 0.776058              |
+| l1i64kB_l1d128kB_l22MB_line128_cpu1GHz        | 1.111745  | 0.001180                 | 0.000020                 | 0.624600              |
+| l1i64kB_l1d128kB_l24MB_line64_cpu1GHz         | 1.137956  | 0.001932                 | 0.000018                 | 0.770179              |
+| l1i64kB_l1d128kB_l24MB_line128_cpu1GHz        | 1.111593  | 0.001180                 | 0.000020                 | 0.618629              |
+
+### Observations for this Benchmark and Hardware Configuration:
+1. **CPI**:
+   - CPI generally decreases with larger L1 instruction and data caches (e.g., 64kB vs. 32kB).
+   - Wider cache lines (128 bytes vs. 64 bytes) result in slightly lower CPI values due to improved spatial locality.
+
+2. **L1 D-Cache Miss Rate**:
+   - Larger L1 data caches (128kB vs. 64kB) reduce miss rates.
+   - Wider cache lines (128 bytes vs. 64 bytes) further reduce miss rates by fetching more data per line.
+
+3. **L1 I-Cache Miss Rate**:
+   - Larger L1 instruction caches (64kB vs. 32kB) significantly reduce miss rates.
+   - The impact of cache line size on L1 I-cache miss rates is less pronounced compared to the data cache.
+
+4. **L2 Cache Miss Rate**:
+   - The L2 cache miss rate decreases with wider cache lines (128 bytes vs. 64 bytes).
+   - A larger L2 cache (4MB vs. 2MB) provides minor improvements for most configurations, as seen in the reduced miss rates.
+
+Would you like this table in a specific file format or further analysis of these results?
 
 ## SJENG
 
