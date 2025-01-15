@@ -344,7 +344,25 @@ It is evident that the performance has increased compared to prior simulations. 
 #### First Questions
 **"Use your knowledge from the first part and locate in the relevant files the key parameters for the processor simulated by gem5 concerning the memory subsystem. Specifically, find the sizes of the caches (L1 instruction and L1 data caches as well as the L2 cache), the associativity of each of them, and the size of the cache line."**
 
-*(Content to be added.)*
+The cache configurations are consistent across all three additional files (**configjeng.ini**, **configmcf.ini**, and **configlibm.ini**). Here are the details for each:
+
+### L1 Instruction Cache (I-Cache):
+- **Size**: 32 KB
+- **Associativity**: 2-way set associative
+- **Cache Line Size**: 64 bytes
+
+### L1 Data Cache (D-Cache):
+- **Size**: 64 KB
+- **Associativity**: 2-way set associative
+- **Cache Line Size**: 64 bytes
+
+### L2 Cache:
+- **Size**: 2 MB
+- **Associativity**: 8-way set associative
+- **Cache Line Size**: 64 bytes
+
+These settings match across all the provided configuration files, including the ones uploaded earlier for **hmmer** and **bzip**.
+
 
 ### Third Exercise
 
