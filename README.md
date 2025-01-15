@@ -1,4 +1,4 @@
-Sure! Here's your LaTeX document converted into Markdown:
+
 
 ---
 
