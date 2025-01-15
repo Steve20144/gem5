@@ -452,6 +452,32 @@ Here are the results for each benchmark simulation. The Cache associativities we
 | spechmmer_l1i64kB_l1iassoc2_l1d128kB_l1dassoc2_l24MB_l2assoc4_line64_cpu1GHz | 1.183287 | 0.000695              | 0.000087              | 0.193925           |
 | spechmmer_l1i64kB_l1iassoc2_l1d128kB_l1dassoc2_l24MB_l2assoc4_line128_cpu1GHz| 1.178340 | 0.000387              | 0.000082              | 0.182442           |
 
+### Observations for this Benchmark and Hardware Configuration:
+
+1. **CPI (Cycles Per Instruction)**:
+   - CPI improves (decreases) as cache sizes (L1 and L2) increase and cache line size widens from 64 bytes to 128 bytes. Larger caches reduce the number of memory accesses, resulting in better instruction throughput.
+   - Larger L1 instruction cache (64kB vs. 32kB) shows minor improvements in CPI, highlighting that the workload is not heavily constrained by instruction fetch misses.
+
+2. **L1 D-Cache Miss Rate**:
+   - Miss rates drop significantly as the L1 data cache size increases (from 64kB to 128kB).
+   - A wider cache line size (128 bytes) further reduces miss rates, as more data is fetched per cache line, reducing the need for additional memory accesses.
+
+3. **L1 I-Cache Miss Rate**:
+   - Miss rates are lower with a larger instruction cache (64kB vs. 32kB), although the improvement is less pronounced compared to the L1 data cache.
+   - This suggests that the benchmark is moderately dependent on instruction cache performance.
+
+4. **L2 Cache Miss Rate**:
+   - The L2 cache miss rate decreases when the L2 size increases from 2MB to 4MB, especially for configurations with larger L1 caches.
+   - Wider cache line sizes (128 bytes) also improve L2 performance, although diminishing returns are observed as miss rates remain relatively high for some configurations.
+
+5. **Cache Line Size Impact**:
+   - Across all metrics, a cache line size of 128 bytes consistently improves performance compared to 64 bytes, particularly for L1 and L2 miss rates.
+
+6. **Overall Performance Trends**:
+   - Larger cache sizes (both L1 and L2) combined with wider cache lines lead to consistent improvements across all metrics.
+   - However, beyond certain cache size thresholds (e.g., L2 > 2MB), the improvements in CPI and miss rates begin to diminish, suggesting workload-specific memory access patterns.
+
+
 
 ## BZIP
 
