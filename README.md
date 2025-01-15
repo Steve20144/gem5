@@ -401,6 +401,26 @@ Observe the execution times of the benchmarks for systems with different clocks.
 4. **Why is scaling not perfect?**
    - Due to architectural constraints, memory bottlenecks, and fixed simulation overheads unrelated to clock frequency.
 
+### Fourth Question
+
+
+| Configuration       | Execution Time (s) | CPI        | L1 I-Cache Miss Rate | L1 D-Cache Miss Rate | L2 Cache Miss Rate |
+|---------------------|---------------------|------------|-----------------------|-----------------------|--------------------|
+| **Default Memory**  | 0.174671           | 3.493415   | 0.000094             | 0.060972             | 0.999944           |
+| **DDR3_2133_x64**   | 0.171530           | 3.430593   | 0.000094             | 0.060972             | 0.999944           |
+
+### Observations:
+1. **Execution Time**: Slight improvement in execution time with the faster memory.
+2. **CPI**: Lower CPI with DDR3_2133_x64, indicating better overall processor efficiency due to reduced memory access latency.
+3. **Miss Rates**:
+   - **L1 I-Cache and L1 D-Cache** miss rates remain unchanged, as these are mostly influenced by the cache hierarchy and workload.
+   - **L2 Cache Miss Rate** remains extremely high, implying the workload is heavily reliant on main memory and the faster DDR3 helps only marginally.
+
+
+- Faster memory reduces memory latency but does not completely address the workload's bottlenecks. The high L2 cache miss rate indicates frequent accesses to main memory, where faster memory only provides diminishing returns.
+
+
+
 
 ### Third Exercise
 
