@@ -363,6 +363,16 @@ The cache configurations are consistent across all three additional files (**con
 
 These settings match across all the provided configuration files, including the ones uploaded earlier for **hmmer** and **bzip**.
 
+#### Second Question
+**"Record the results from the different benchmarks. Specifically, keep the following information from each benchmark:  
+(i) execution time (note: the time required for the program to run on the simulated processor, not the time required by gem5 to perform the simulation),  
+(ii) CPI (cycles per instruction), and  
+(iii) overall miss rates for the L1 Data cache, L1 Instruction cache, and L2 cache.  
+
+You can obtain this information from the `stats.txt` files. (Hint: for the first, look for the `sim_seconds` value, and for the third, search for entries like this: `icache.overall_miss_rate::total`).  
+
+Create graphs to visualize this information for all the benchmarks. What do you observe?"**
+
 
 ### Third Exercise
 
