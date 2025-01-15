@@ -341,7 +341,8 @@ It is evident that the performance has increased compared to prior simulations. 
 
 ### Second Exercise
 
-% Detail the objectives, procedures, and expected outcomes of the second exercise.
+#### First Questions
+**"Use your knowledge from the first part and locate in the relevant files the key parameters for the processor simulated by gem5 concerning the memory subsystem. Specifically, find the sizes of the caches (L1 instruction and L1 data caches as well as the L2 cache), the associativity of each of them, and the size of the cache line."**
 
 *(Content to be added.)*
 
