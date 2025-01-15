@@ -420,7 +420,46 @@ Observe the execution times of the benchmarks for systems with different clocks.
 - Faster memory reduces memory latency but does not completely address the workload's bottlenecks. The high L2 cache miss rate indicates frequent accesses to main memory, where faster memory only provides diminishing returns.
 
 
+### Second Step
+**"Try to find the parameter values from the following list that will maximize the performance of your system for each benchmark:
+L1 instruction cache size  
+L1 instruction cache associativity  
+L1 data cache size  
+L1 data cache associativity  
+L2 cache size  
+L2 cache associativity  
+Cache line size"**
 
+Here are the results for each benchmark simulation. The Cache associativities were not deemed as important as the rest of the metrics so they were kept constant for the sake of time conservation.
+
+## HMMER
+| Benchmark Configuration                                              | CPI       | L1 D-Cache Miss Rate | L1 I-Cache Miss Rate | L2 Cache Miss Rate |
+|----------------------------------------------------------------------|-----------|-----------------------|-----------------------|--------------------|
+| spechmmer_l1i32kB_l1iassoc2_l1d64kB_l1dassoc2_l22MB_l2assoc4_line64_cpu1GHz  | 1.185304 | 0.001629              | 0.000221              | 0.077747           |
+| spechmmer_l1i32kB_l1iassoc2_l1d64kB_l1dassoc2_l22MB_l2assoc4_line128_cpu1GHz | 1.180334 | 0.000879              | 0.000344              | 0.072074           |
+| spechmmer_l1i32kB_l1iassoc2_l1d128kB_l1dassoc2_l22MB_l2assoc4_line64_cpu1GHz | 1.183580 | 0.000694              | 0.000212              | 0.179969           |
+| spechmmer_l1i32kB_l1iassoc2_l1d128kB_l1dassoc2_l22MB_l2assoc4_line128_cpu1GHz| 1.178968 | 0.000386              | 0.000344              | 0.146335           |
+| spechmmer_l1i64kB_l1iassoc2_l1d64kB_l1dassoc2_l22MB_l2assoc4_line64_cpu1GHz  | 1.185060 | 0.001631              | 0.000087              | 0.080460           |
+| spechmmer_l1i64kB_l1iassoc2_l1d64kB_l1dassoc2_l22MB_l2assoc4_line128_cpu1GHz | 1.179780 | 0.000880              | 0.000082              | 0.079899           |
+| spechmmer_l1i64kB_l1iassoc2_l1d128kB_l1dassoc2_l22MB_l2assoc4_line64_cpu1GHz | 1.183287 | 0.000695              | 0.000087              | 0.193925           |
+| spechmmer_l1i64kB_l1iassoc2_l1d128kB_l1dassoc2_l22MB_l2assoc4_line128_cpu1GHz| 1.178340 | 0.000387              | 0.000082              | 0.182442           |
+| spechmmer_l1i32kB_l1iassoc2_l1d64kB_l1dassoc2_l24MB_l2assoc4_line64_cpu1GHz  | 1.185304 | 0.001629              | 0.000221              | 0.077747           |
+| spechmmer_l1i32kB_l1iassoc2_l1d64kB_l1dassoc2_l24MB_l2assoc4_line128_cpu1GHz | 1.180334 | 0.000879              | 0.000344              | 0.072074           |
+| spechmmer_l1i32kB_l1iassoc2_l1d128kB_l1dassoc2_l24MB_l2assoc4_line64_cpu1GHz | 1.183580 | 0.000694              | 0.000212              | 0.179969           |
+| spechmmer_l1i32kB_l1iassoc2_l1d128kB_l1dassoc2_l24MB_l2assoc4_line128_cpu1GHz| 1.178968 | 0.000386              | 0.000344              | 0.146335           |
+| spechmmer_l1i64kB_l1iassoc2_l1d64kB_l1dassoc2_l24MB_l2assoc4_line64_cpu1GHz  | 1.185060 | 0.001631              | 0.000087              | 0.080460           |
+| spechmmer_l1i64kB_l1iassoc2_l1d64kB_l1dassoc2_l24MB_l2assoc4_line128_cpu1GHz | 1.179780 | 0.000880              | 0.000082              | 0.079899           |
+| spechmmer_l1i64kB_l1iassoc2_l1d128kB_l1dassoc2_l24MB_l2assoc4_line64_cpu1GHz | 1.183287 | 0.000695              | 0.000087              | 0.193925           |
+| spechmmer_l1i64kB_l1iassoc2_l1d128kB_l1dassoc2_l24MB_l2assoc4_line128_cpu1GHz| 1.178340 | 0.000387              | 0.000082              | 0.182442           |
+
+
+## BZIP
+
+## MCF
+
+## SJENG
+
+## LIBM
 
 ### Third Exercise
 
