@@ -518,9 +518,33 @@ Here is a table that compares the results of the **mcf** benchmark for different
    - The L2 cache miss rate decreases with wider cache lines (128 bytes vs. 64 bytes).
    - A larger L2 cache (4MB vs. 2MB) provides minor improvements for most configurations, as seen in the reduced miss rates.
 
-Would you like this table in a specific file format or further analysis of these results?
 
 ## SJENG
+For this particular benchmark, the L2 cache miss-rate was particularly high. This implied that the decision to keep cache associativities constant was not working for this particular Benchmark. 
+### Associativy Constant
+Here is the table summarizing the results for the **specsjeng** benchmark:
+
+| **Configuration**                             | **CPI**    | **L1 D-Cache Miss Rate** | **L1 I-Cache Miss Rate** | **L2 Cache Miss Rate** |
+|-----------------------------------------------|------------|--------------------------|--------------------------|------------------------|
+| specsjeng_l1i32kB_l1d64kB_l22MB_line64        | 7.040276   | 0.121831                 | 0.000020                 | 0.999972              |
+| specsjeng_l1i32kB_l1d64kB_l22MB_line128       | 4.974806   | 0.060922                 | 0.000015                 | 0.999824              |
+| specsjeng_l1i32kB_l1d128kB_l22MB_line64       | 7.040343   | 0.121831                 | 0.000020                 | 0.999976              |
+| specsjeng_l1i32kB_l1d128kB_l22MB_line128      | 4.974776   | 0.060921                 | 0.000015                 | 0.999856              |
+| specsjeng_l1i64kB_l1d64kB_l22MB_line64        | 7.043379   | 0.121831                 | 0.000019                 | 0.999979              |
+| specsjeng_l1i64kB_l1d64kB_l22MB_line128       | 4.974854   | 0.060922                 | 0.000013                 | 0.999846              |
+| specsjeng_l1i64kB_l1d128kB_l22MB_line64       | 7.040244   | 0.121831                 | 0.000019                 | 0.999983              |
+| specsjeng_l1i64kB_l1d128kB_l22MB_line128      | 4.974881   | 0.060921                 | 0.000013                 | 0.999877              |
+| specsjeng_l1i32kB_l1d64kB_l24MB_line64        | 7.038783   | 0.121831                 | 0.000020                 | 0.999972              |
+| specsjeng_l1i32kB_l1d64kB_l24MB_line128       | 4.972564   | 0.060922                 | 0.000015                 | 0.999824              |
+| specsjeng_l1i32kB_l1d128kB_l24MB_line64       | 7.038783   | 0.121831                 | 0.000020                 | 0.999976              |
+| specsjeng_l1i32kB_l1d128kB_l24MB_line128      | 4.972564   | 0.060921                 | 0.000015                 | 0.999856              |
+| specsjeng_l1i64kB_l1d64kB_l24MB_line64        | 7.038702   | 0.121831                 | 0.000019                 | 0.999979              |
+| specsjeng_l1i64kB_l1d64kB_l24MB_line128       | 4.972596   | 0.060922                 | 0.000013                 | 0.999846              |
+| specsjeng_l1i64kB_l1d128kB_l24MB_line64       | 7.038696   | 0.121831                 | 0.000019                 | 0.999983              |
+| specsjeng_l1i64kB_l1d128kB_l24MB_line128      | 4.972596   | 0.060921                 | 0.000013                 | 0.999877              |
+
+### L1 & L2 Cache sizes Constant
+
 
 ## LIBM
 
