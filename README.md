@@ -573,7 +573,36 @@ It is clear that this benchmark's CPI is highly affected by the cache line size.
 ### Third Exercise
 
 ## Cost Function. 
-The Cost Function that was selected is the following : **C = a*S + b*T** where S is the parameter that is related to the crircuit size whereas T is the parameter that is linked to the speed of the system. a,b are weights and in this particular scenario they are both 0,5 because the Size and the Speed were deemed of equal importance. By expanding the formula, the S becomes  $$ k_1 \cdot M_{\text{cache}} + k_2 \cdot A $$. Mcache is equal to w1 \cdot M_{\text{L1i}} + w2 \cdot M_{\text{L1d} + w3 \cdot M_{\text{L2}}
+The cost function selected is as follows: 
+
+$$ C = a \cdot S + b \cdot T $$
+
+where:
+
+- \( S \) is the parameter related to the circuit size.
+- \( T \) is the parameter linked to the system's speed.  
+- \( a \) and \( b \) are weights.  
+
+In this scenario, \( a \) and \( b \) are both set to 0.5 because the size and speed are deemed equally important. 
+
+Expanding the formula for \( S \):
+
+$$ S = k_1 \cdot M_{\text{cache}} + k_2 \cdot A $$
+
+Here, \( M_{\text{cache}} \) is further expressed as:
+
+$$ M_{\text{cache}} = w_1 \cdot M_{\text{L1i}} + w_2 \cdot M_{\text{L1d}} + w_3 \cdot M_{\text{L2}} $$
+
+where:
+
+- \( M_{\text{L1i}} \) is the size of the L1 instruction cache.
+- \( M_{\text{L1d}} \) is the size of the L1 data cache.
+- \( M_{\text{L2}} \) is the size of the L2 cache.
+- \( w_1 \), \( w_2 \), and \( w_3 \) are weights associated with the respective cache levels.
+
+This formulation balances circuit size and system speed to optimize the cost function \( C \) based on the given parameters and weights. 
+
+
 
 
 ## Issues
