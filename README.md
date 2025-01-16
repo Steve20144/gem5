@@ -597,10 +597,18 @@ where:
 
 
 
+
+
+---
+
 $$ M_{\text{L1i}} $$ represents the size of the L1 instruction cache.  
 $$ M_{\text{L1d}} $$ represents the size of the L1 data cache.  
-$$ M_{\text{L2}} $$  represents the size of the L2 cache.  
-\( w_1 \), \( w_2 \), and \( w_3 \) are the weights associated with the respective cache levels.
+$$ M_{\text{L2}} $$ represents the size of the L2 cache.  
+$$ w_1 $$, $$ w_2 $$, and $$ w_3 $$ are the weights associated with the respective cache levels.
+
+---
+
+
 
 
 This formulation balances circuit size and system speed to optimize the cost function \( C \) based on the given parameters and weights. 
