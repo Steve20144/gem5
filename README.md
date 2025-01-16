@@ -573,7 +573,8 @@ It is clear that this benchmark's CPI is highly affected by the cache line size.
 ### Third Exercise
 
 ## Cost Function. 
-The Cost Function that was selected is the following : **C = a*S + b*T** where S is the parameter that is related to the crircuit size whereas T is the parameter that is linked to the speed of the system. a,b are weights and in this particular scenario they are both 0,5 because the Size and the Speed were deemed of equal importance. By expanding the formula, the S becomes  **k1\*Mcache + k2\*A **
+The Cost Function that was selected is the following : **C = a*S + b*T** where S is the parameter that is related to the crircuit size whereas T is the parameter that is linked to the speed of the system. a,b are weights and in this particular scenario they are both 0,5 because the Size and the Speed were deemed of equal importance. By expanding the formula, the S becomes  $$ k_1 \cdot M_{\text{cache}} + k_2 \cdot A $$. Mcache is equal to w1 \cdot M_{\text{L1i}} + w2 \cdot M_{\text{L1d} + w3 \cdot M_{\text{L2}}
+
 
 ## Issues
 
