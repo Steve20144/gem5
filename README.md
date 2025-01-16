@@ -572,7 +572,7 @@ It is clear that this benchmark's CPI is highly affected by the cache line size.
 
 ### Third Exercise
 
-% Explain the objectives, procedures, and expected outcomes of the third exercise.
+## Cost Function. 
 
 *(Content to be added.)*
 
