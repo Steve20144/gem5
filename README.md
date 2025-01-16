@@ -593,7 +593,7 @@ Expanding the formula for \( S \):
 
 $$ S = k_1 \cdot M_{\text{cache}} + k_2 \cdot A $$
 
-Here, $$ ( M_{\text{cache}} $$ is further expressed as:
+Here, $$ M_{\text{cache}} $$ is further expressed as:
 
 $$ M_{\text{cache}} = w_1 \cdot M_{L1i} + w_2 \cdot M_{L1d} + w_3 \cdot M_{L2} $$
 
