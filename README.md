@@ -593,7 +593,7 @@ Expanding the formula for \( S \):
 
 $$ S = k_1 \cdot M_{\text{cache}} + k_2 \cdot A $$
 
-Here, $$ M_{\text{cache}} $$ is further expressed as:
+Here, \( M_{\text{cache}} \) is further expressed as:
 
 $$ M_{\text{cache}} = w_1 \cdot M_{L1i} + w_2 \cdot M_{L1d} + w_3 \cdot M_{L2} $$
 
@@ -603,6 +603,7 @@ where:
 - \( M_{L1d} \): The size of the L1 data cache.
 - \( M_{L2} \): The size of the L2 cache.
 - \( w_1 \), \( w_2 \), and \( w_3 \): The weights associated with the respective cache levels.
+
 
 This formulation balances circuit size and system speed to optimize the cost function \( C \) based on the given parameters and weights.
 
