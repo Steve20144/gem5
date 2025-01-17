@@ -20,7 +20,6 @@
         - [Some information on different CPU models.](#some-information-on-different-cpu-models)
     - [Second Exercise](#second-exercise)
     - [Third Exercise](#third-exercise)
-3. [Issues](#issues)
 
 ---
 
