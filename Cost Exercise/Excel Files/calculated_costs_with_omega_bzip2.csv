@@ -1,0 +1,9 @@
+Benchmarks,CPI,L1d_miss_rate,L1i_miss_rate,L2_miss_rate,L1i_size_kB,L1i_assoc,L1d_size_kB,L1d_assoc,L2_size_MB,L2_assoc,L1i_size_cost,L1d_size_cost,L2_size_cost,L1i_assoc_cost,L2_assoc_cost,M_cache,A_cache,Performance,Cost
+specbzip_l1i64kB_l1iassoc2_l1d64kB_l1dassoc2_l22MB_l2assoc4_line128_cpu1GHz,1.606366,0.01429,5.60E-05,0.174167,64,2,64,2,2,4,6.4,6.4,204.8,0.2,0.4,56,0.25,1.13705476,20.20602738
+specbzip_l1i64kB_l1iassoc2_l1d128kB_l1dassoc2_l22MB_l2assoc4_line128_cpu1GHz,1.573925,0.010702,5.60E-05,0.236481,64,2,128,2,2,4,6.4,12.8,204.8,0.2,0.4,58.24,0.25,1.1175467,20.98027335
+specbzip_l1i64kB_l1iassoc2_l1d64kB_l1dassoc2_l24MB_l2assoc4_line128_cpu1GHz,1.597315,0.014274,5.60E-05,0.154595,64,2,64,2,4,4,6.4,6.4,409.6,0.2,0.4,107.2,0.25,1.12954234,38.12227117
+specbzip_l1i64kB_l1iassoc2_l1d64kB_l1dassoc2_l24MB_l2assoc4_line128_cpu1GHz,1.606309,0.01429,6.70E-05,0.174178,64,2,64,2,4,4,6.4,6.4,409.6,0.2,0.4,107.2,0.25,1.13701651,38.12600825
+specbzip_l1i64kB_l1iassoc2_l1d64kB_l1dassoc2_l24MB_l2assoc4_line64_cpu1GHz,1.609942,0.014672,7.70E-05,0.28214,64,2,64,2,4,4,6.4,6.4,409.6,0.2,0.4,107.2,0.25,1.14609553,38.13054776
+specbzip_l1i64kB_l1iassoc2_l1d128kB_l1dassoc2_l24MB_l2assoc4_line128_cpu1GHz,1.564919,0.010685,5.60E-05,0.209911,64,2,128,2,4,4,6.4,12.8,409.6,0.2,0.4,109.44,0.25,1.10964575,38.89632288
+specbzip_l1i64kB_l1iassoc2_l1d128kB_l1dassoc2_l24MB_l2assoc4_line128_cpu1GHz,1.573904,0.010701,6.70E-05,0.236486,64,2,128,2,4,4,6.4,12.8,409.6,0.2,0.4,109.44,0.25,1.11753314,38.90026657
+specbzip_l1i64kB_l1iassoc2_l1d128kB_l1dassoc2_l24MB_l2assoc4_line64_cpu1GHz,1.581525,0.011621,7.70E-05,0.363007,64,2,128,2,4,4,6.4,12.8,409.6,0.2,0.4,109.44,0.25,1.130598,38.906799
