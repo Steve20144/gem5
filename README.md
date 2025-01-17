@@ -451,30 +451,13 @@ Here are the results for each benchmark simulation. The Cache associativities we
 | spechmmer_l1i64kB_l1iassoc2_l1d128kB_l1dassoc2_l24MB_l2assoc4_line64_cpu1GHz | 1.183287 | 0.000695              | 0.000087              | 0.193925           |
 | spechmmer_l1i64kB_l1iassoc2_l1d128kB_l1dassoc2_l24MB_l2assoc4_line128_cpu1GHz| 1.178340 | 0.000387              | 0.000082              | 0.182442           |
 
-### Observations for this Benchmark and Hardware Configuration:
+ **Crucial Parameters**:
+     - **L1 Instruction Cache Size and Associativity**: `hmmer` involves repeated fetching of code for statistical modeling. A larger instruction cache with high associativity reduces instruction fetch stalls.
+     - **L2 Cache Size**: Bioinformatics workloads process large datasets, and a larger L2 cache can help in reducing memory access penalties.
+   - **Why**: Efficient instruction caching is essential due to frequent branching and instruction reuse. L2 cache assists with data-intensive operations.
 
-1. **CPI (Cycles Per Instruction)**:
-   - CPI improves (decreases) as cache sizes (L1 and L2) increase and cache line size widens from 64 bytes to 128 bytes. Larger caches reduce the number of memory accesses, resulting in better instruction throughput.
-   - Larger L1 instruction cache (64kB vs. 32kB) shows minor improvements in CPI, highlighting that the workload is not heavily constrained by instruction fetch misses.
 
-2. **L1 D-Cache Miss Rate**:
-   - Miss rates drop significantly as the L1 data cache size increases (from 64kB to 128kB).
-   - A wider cache line size (128 bytes) further reduces miss rates, as more data is fetched per cache line, reducing the need for additional memory accesses.
 
-3. **L1 I-Cache Miss Rate**:
-   - Miss rates are lower with a larger instruction cache (64kB vs. 32kB), although the improvement is less pronounced compared to the L1 data cache.
-   - This suggests that the benchmark is moderately dependent on instruction cache performance.
-
-4. **L2 Cache Miss Rate**:
-   - The L2 cache miss rate decreases when the L2 size increases from 2MB to 4MB, especially for configurations with larger L1 caches.
-   - Wider cache line sizes (128 bytes) also improve L2 performance, although diminishing returns are observed as miss rates remain relatively high for some configurations.
-
-5. **Cache Line Size Impact**:
-   - Across all metrics, a cache line size of 128 bytes consistently improves performance compared to 64 bytes, particularly for L1 and L2 miss rates.
-
-6. **Overall Performance Trends**:
-   - Larger cache sizes (both L1 and L2) combined with wider cache lines lead to consistent improvements across all metrics.
-   - However, beyond certain cache size thresholds (e.g., L2 > 2MB), the improvements in CPI and miss rates begin to diminish, suggesting workload-specific memory access patterns.
 
 ## BZIP2
 
@@ -488,6 +471,11 @@ Here are the results for each benchmark simulation. The Cache associativities we
 | specbzip_l1i64kB_l1iassoc2_l1d128kB_l1dassoc2_l24MB_l2assoc4_line64_cpu1GHz  | 1.581525 | 0.011621                | 0.000077                      | 0.363007           |
 | specbzip_l1i64kB_l1iassoc2_l1d64kB_l1dassoc2_l24MB_l2assoc4_line128_cpu1GHz  | 1.606309 | 0.014290                | 0.000067                      | 0.174178           |
 | specbzip_l1i64kB_l1iassoc2_l1d64kB_l1dassoc2_l24MB_l2assoc4_line64_cpu1GHz   | 1.609942 | 0.014672                | 0.000077                      | 0.282140           |
+
+**Crucial Parameters**: 
+     - **L1 Data Cache Size and Associativity**: `bzip2` performs repetitive operations on small chunks of data during compression, which benefits from a well-optimized L1 Data Cache. Insufficient size or associativity can lead to cache misses.
+     - **L2 Cache Size**: Larger datasets and intermediate results might spill over into L2. The size of the L2 cache helps reduce the performance penalty from accessing main memory.
+   - **Why**: The benchmark's memory access patterns involve small, localized chunks of data. Optimizing L1 and L2 caches minimizes data latency.
 
 
 ## MCF
@@ -512,22 +500,10 @@ Here is a table that compares the results of the **mcf** benchmark for different
 | l1i64kB_l1d128kB_l24MB_line64_cpu1GHz         | 1.137956  | 0.001932                 | 0.000018                 | 0.770179              |
 | l1i64kB_l1d128kB_l24MB_line128_cpu1GHz        | 1.111593  | 0.001180                 | 0.000020                 | 0.618629              |
 
-### Observations for this Benchmark and Hardware Configuration:
-1. **CPI**:
-   - CPI generally decreases with larger L1 instruction and data caches (e.g., 64kB vs. 32kB).
-   - Wider cache lines (128 bytes vs. 64 bytes) result in slightly lower CPI values due to improved spatial locality.
-
-2. **L1 D-Cache Miss Rate**:
-   - Larger L1 data caches (128kB vs. 64kB) reduce miss rates.
-   - Wider cache lines (128 bytes vs. 64 bytes) further reduce miss rates by fetching more data per line.
-
-3. **L1 I-Cache Miss Rate**:
-   - Larger L1 instruction caches (64kB vs. 32kB) significantly reduce miss rates.
-   - The impact of cache line size on L1 I-cache miss rates is less pronounced compared to the data cache.
-
-4. **L2 Cache Miss Rate**:
-   - The L2 cache miss rate decreases with wider cache lines (128 bytes vs. 64 bytes).
-   - A larger L2 cache (4MB vs. 2MB) provides minor improvements for most configurations, as seen in the reduced miss rates.
+**Crucial Parameters**:
+     - **L2 Cache Size and Associativity**: `mcf` accesses sparse data structures, leading to irregular memory patterns that frequently bypass L1 caches. A larger and more associative L2 cache can reduce main memory accesses.
+     - **L1 Instruction Cache Associativity**: While L1 instruction caching is less critical for `mcf`, the associativity can mitigate conflicts caused by irregular instruction fetching.
+   - **Why**: The irregular and sparse nature of `mcf`'s memory access patterns makes it heavily dependent on the L2 cache to bridge the gap between L1 misses and memory accesses.
 
 
 ## SJENG
@@ -552,8 +528,12 @@ For this particular benchmark, the CPI as well as the L2 cache miss-rate was par
 | specsjeng_l1i64kB_l1d128kB_l24MB_line64       | 7.038696   | 0.121831                 | 0.000019                 | 0.999983              |
 | specsjeng_l1i64kB_l1d128kB_l24MB_line128      | 4.972596   | 0.060921                 | 0.000013                 | 0.999877              |
 
+**Crucial Parameters**:
+     - **L1 Instruction Cache Size and Associativity**: The chess engine involves significant branching and decision-making, relying on quick instruction fetches to evaluate moves.
+     - **L1 Data Cache Associativity**: Decision-making benefits from localized data caching, where associativity helps minimize cache conflicts.
+   - **Why**: The benchmark's workload is instruction-heavy with frequent decision tree evaluations. A well-configured L1 cache ensures smooth instruction flow and data access.
+
 ### L1 & L2 Cache sizes Constant // Associativity 8 16
-The simulation results indicate that this particular benchmark is affected by the cache line size and not by the associativity. This is evident in the following simulation results.
 | **Benchmark**                                                      | **CPI**   | **L1 D-Cache Miss Rate** | **L1 I-Cache Miss Rate** | **L2 Cache Miss Rate** |
 |--------------------------------------------------------------------|-----------|--------------------------|--------------------------|------------------------|
 | specsjeng_l1i64kB_l1iassoc4_l1d64kB_l1dassoc4_l24MB_l2assoc8_line128_cpu1GHz_new | 4.972548  | 0.060918                 | 0.000013                 | 0.999973              |
@@ -566,7 +546,7 @@ The simulation results indicate that this particular benchmark is affected by th
 
 
 ## LIBM
-It is clear that this benchmark's CPI is highly affected by the cache line size. The Table below includes some combinations of diferent cache line sizes, L2 cache sizes and associativities of 4,8 and 16.
+
 | **Benchmark**                                                      | **CPI**   | **L1 D-Cache Miss Rate** | **L1 I-Cache Miss Rate** | **L2 Cache Miss Rate** |
 |--------------------------------------------------------------------|-----------|--------------------------|--------------------------|------------------------|
 | speclibm_l1i32kB_l1d64kB_l22MB_l2assoc4_line64_cpu1GHz             | 2.623265  | 0.060971                 | 0.000094                 | 0.999944              |
@@ -579,6 +559,11 @@ It is clear that this benchmark's CPI is highly affected by the cache line size.
 | speclibm_l1i32kB_l1d64kB_l24MB_l2assoc8_line128_cpu1GHz            | 1.989132  | 0.030487                 | 0.000112                 | 0.999799              |
 | speclibm_l1i32kB_l1d64kB_l24MB_l2assoc16_line128_cpu1GHz           | 1.989132  | 0.030487                 | 0.000112                 | 0.999799              |
 | speclibm_l1i32kB_l1d64kB_l24MB_l2assoc16_line256_cpu1GHz           | 1.653896  | 0.015244                 | 0.000134                 | 0.999474              |
+
+- **Crucial Parameters**:
+     - **L1 Data Cache Size**: Continuous streaming of data for simulation benefits from a large L1 Data Cache to keep working sets close to the processor.
+     - **L2 Cache Size**: Larger datasets frequently spill into L2. A larger cache helps prevent memory bottlenecks.
+   - **Why**: `lbm` requires high memory bandwidth and frequent reuse of floating-point data. A well-optimized L1 and L2 cache hierarchy ensures minimal stalls during data fetches.
 
 
 ### Third Exercise
