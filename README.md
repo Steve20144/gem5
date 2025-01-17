@@ -676,7 +676,7 @@ The exercise states that it is necessary to define an abstract value for the cos
 | specsjeng_l1i64kB_l1iassoc2_l1d128kB_l1dassoc2_l24MB_l2assoc4_line128_cpu1GHz | 4.9726  |        0.060921 |         1.3e-05 |       0.999877 |            64 |           2 |           128 |           2 |            4 |          4 |             6.4 |            12.8 |          409.6 |              0.2 |             0.4 |    109.44 |      0.25 |       3.54995 | 40.1165 |
 
 
----
+
 
 ---
 | Benchmarks                                                                    |     CPI |   L1d_miss_rate |   L1i_miss_rate |   L2_miss_rate |   L1i_size_kB |   L1i_assoc |   L1d_size_kB |   L1d_assoc |   L2_size_MB |   L2_assoc |   L1i_size_cost |   L1d_size_cost |   L2_size_cost |   L1i_assoc_cost |   L2_assoc_cost |   M_cache |   A_cache |   Performance |    Cost |
@@ -700,7 +700,7 @@ The exercise states that it is necessary to define an abstract value for the cos
 
 ---
 
-| Benchmark Name                                                            | CPI       | L1d Miss Rate | L1i Miss Rate | L2 Miss Rate | L1i Size (kB) | L1i Assoc | L1d Size (kB) | L1d Assoc | L2 Size (MB) | L2 Assoc | L1i Size Cost | L1d Size Cost | L2 Size Cost | L1i Assoc Cost | L2 Assoc Cost | M Cache | A Cache | Performance | Cost       |
+| Benchmarks                                                           | CPI       | L1d Miss Rate | L1i Miss Rate | L2 Miss Rate | L1i Size (kB) | L1i Assoc | L1d Size (kB) | L1d Assoc | L2 Size (MB) | L2 Assoc | L1i Size Cost | L1d Size Cost | L2 Size Cost | L1i Assoc Cost | L2 Assoc Cost | M Cache | A Cache | Performance | Cost       |
 |---------------------------------------------------------------------------|-----------|---------------|---------------|--------------|---------------|-----------|---------------|-----------|--------------|----------|---------------|---------------|--------------|----------------|---------------|---------|---------|-------------|------------|
 | specbzip_l1i64kB_l1iassoc2_l1d128kB_l1dassoc2_l24MB_l2assoc4_line128_cpu1GHz | 1.564919 | 0.010685      | 0.000056      | 0.209911     | 64            | 2         | 128           | 2         | 4            | 4        | 6.4           | 12.8          | 409.6        | 0.2            | 0.4           | 109.44  | 0.25    | 1.109646    | 38.896323  |
 | specbzip_l1i64kB_l1iassoc2_l1d64kB_l1dassoc2_l24MB_l2assoc4_line128_cpu1GHz  | 1.597315 | 0.014274      | 0.000056      | 0.154595     | 64            | 2         | 64            | 2         | 4            | 4        | 6.4           | 6.4           | 409.6        | 0.2            | 0.4           | 107.20  | 0.25    | 1.129542    | 38.122271  |
