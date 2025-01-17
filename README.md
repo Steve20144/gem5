@@ -643,22 +643,27 @@ The exercise states that it is necessary to define an abstract value for the cos
     
     # Calculate the total cost
     df["Cost"] = 0.5 * (0.7 * df["M_cache"] + 0.3 * df["A_cache"]) + 0.5 * df["Performance"]
-    
+```    
+## Tables for **sjeng** and **hmmer**
+| Benchmarks                                                                    |     CPI |   L1d_miss_rate |   L1i_miss_rate |   L2_miss_rate |   L1i_size_kB |   L1i_assoc |   L1d_size_kB |   L1d_assoc |   L2_size_MB |   L2_assoc |   L1i_size_cost |   L1d_size_cost |   L2_size_cost |   L1i_assoc_cost |   L2_assoc_cost |   M_cache |   A_cache |   Performance |    Cost |
+|:------------------------------------------------------------------------------|--------:|----------------:|----------------:|---------------:|--------------:|------------:|--------------:|------------:|-------------:|-----------:|----------------:|----------------:|---------------:|-----------------:|----------------:|----------:|----------:|--------------:|--------:|
+| specsjeng_l1i32kB_l1iassoc2_l1d64kB_l1dassoc2_l22MB_l2assoc4_line64_cpu1GHz   | 7.04028 |        0.121831 |         2e-05   |       0.999972 |            32 |           2 |            64 |           2 |            2 |          4 |             3.2 |             6.4 |          204.8 |              0.2 |             0.4 |     54.72 |      0.25 |       5.00647 | 21.6927 |
+| specsjeng_l1i32kB_l1iassoc2_l1d64kB_l1dassoc2_l22MB_l2assoc4_line128_cpu1GHz  | 4.97481 |        0.060922 |         1.5e-05 |       0.999824 |            32 |           2 |            64 |           2 |            2 |          4 |             3.2 |             6.4 |          204.8 |              0.2 |             0.4 |     54.72 |      0.25 |       3.55149 | 20.9652 |
+| specsjeng_l1i32kB_l1iassoc2_l1d128kB_l1dassoc2_l22MB_l2assoc4_line64_cpu1GHz  | 7.04034 |        0.121831 |         2e-05   |       0.999976 |            32 |           2 |           128 |           2 |            2 |          4 |             3.2 |            12.8 |          204.8 |              0.2 |             0.4 |     56.96 |      0.25 |       5.00652 | 22.4768 |
+| specsjeng_l1i32kB_l1iassoc2_l1d128kB_l1dassoc2_l22MB_l2assoc4_line128_cpu1GHz | 4.97478 |        0.060921 |         1.5e-05 |       0.999856 |            32 |           2 |           128 |           2 |            2 |          4 |             3.2 |            12.8 |          204.8 |              0.2 |             0.4 |     56.96 |      0.25 |       3.55147 | 21.7492 |
+| specsjeng_l1i64kB_l1iassoc2_l1d64kB_l1dassoc2_l22MB_l2assoc4_line64_cpu1GHz   | 7.04338 |        0.121831 |         1.9e-05 |       0.999979 |            64 |           2 |            64 |           2 |            2 |          4 |             6.4 |             6.4 |          204.8 |              0.2 |             0.4 |     56    |      0.25 |       5.00864 | 22.1418 |
+| specsjeng_l1i64kB_l1iassoc2_l1d64kB_l1dassoc2_l22MB_l2assoc4_line128_cpu1GHz  | 4.97485 |        0.060922 |         1.3e-05 |       0.999846 |            64 |           2 |            64 |           2 |            2 |          4 |             6.4 |             6.4 |          204.8 |              0.2 |             0.4 |     56    |      0.25 |       3.55153 | 21.4133 |
+| specsjeng_l1i64kB_l1iassoc2_l1d128kB_l1dassoc2_l22MB_l2assoc4_line64_cpu1GHz  | 7.04024 |        0.121831 |         1.9e-05 |       0.999983 |            64 |           2 |           128 |           2 |            2 |          4 |             6.4 |            12.8 |          204.8 |              0.2 |             0.4 |     58.24 |      0.25 |       5.00645 | 22.9247 |
+| specsjeng_l1i64kB_l1iassoc2_l1d128kB_l1dassoc2_l22MB_l2assoc4_line128_cpu1GHz | 4.97488 |        0.060921 |         1.3e-05 |       0.999877 |            64 |           2 |           128 |           2 |            2 |          4 |             6.4 |            12.8 |          204.8 |              0.2 |             0.4 |     58.24 |      0.25 |       3.55155 | 22.1973 |
+| specsjeng_l1i32kB_l1iassoc2_l1d64kB_l1dassoc2_l24MB_l2assoc4_line64_cpu1GHz   | 7.03878 |        0.121831 |         2e-05   |       0.999972 |            32 |           2 |            64 |           2 |            4 |          4 |             3.2 |             6.4 |          409.6 |              0.2 |             0.4 |    105.92 |      0.25 |       5.00542 | 39.6122 |
+| specsjeng_l1i32kB_l1iassoc2_l1d64kB_l1dassoc2_l24MB_l2assoc4_line128_cpu1GHz  | 4.97256 |        0.060922 |         1.5e-05 |       0.999824 |            32 |           2 |            64 |           2 |            4 |          4 |             3.2 |             6.4 |          409.6 |              0.2 |             0.4 |    105.92 |      0.25 |       3.54992 | 38.8845 |
+| specsjeng_l1i32kB_l1iassoc2_l1d128kB_l1dassoc2_l24MB_l2assoc4_line64_cpu1GHz  | 7.03878 |        0.121831 |         2e-05   |       0.999976 |            32 |           2 |           128 |           2 |            4 |          4 |             3.2 |            12.8 |          409.6 |              0.2 |             0.4 |    108.16 |      0.25 |       5.00542 | 40.3962 |
+| specsjeng_l1i32kB_l1iassoc2_l1d128kB_l1dassoc2_l24MB_l2assoc4_line128_cpu1GHz | 4.97256 |        0.060921 |         1.5e-05 |       0.999856 |            32 |           2 |           128 |           2 |            4 |          4 |             3.2 |            12.8 |          409.6 |              0.2 |             0.4 |    108.16 |      0.25 |       3.54993 | 39.6685 |
+| specsjeng_l1i64kB_l1iassoc2_l1d64kB_l1dassoc2_l24MB_l2assoc4_line64_cpu1GHz   | 7.0387  |        0.121831 |         1.9e-05 |       0.999979 |            64 |           2 |            64 |           2 |            4 |          4 |             6.4 |             6.4 |          409.6 |              0.2 |             0.4 |    107.2  |      0.25 |       5.00537 | 40.0602 |
+| specsjeng_l1i64kB_l1iassoc2_l1d64kB_l1dassoc2_l24MB_l2assoc4_line128_cpu1GHz  | 4.9726  |        0.060922 |         1.3e-05 |       0.999846 |            64 |           2 |            64 |           2 |            4 |          4 |             6.4 |             6.4 |          409.6 |              0.2 |             0.4 |    107.2  |      0.25 |       3.54995 | 39.3325 |
+| specsjeng_l1i64kB_l1iassoc2_l1d128kB_l1dassoc2_l24MB_l2assoc4_line64_cpu1GHz  | 7.0387  |        0.121831 |         1.9e-05 |       0.999983 |            64 |           2 |           128 |           2 |            4 |          4 |             6.4 |            12.8 |          409.6 |              0.2 |             0.4 |    109.44 |      0.25 |       5.00536 | 40.8442 |
+| specsjeng_l1i64kB_l1iassoc2_l1d128kB_l1dassoc2_l24MB_l2assoc4_line128_cpu1GHz | 4.9726  |        0.060921 |         1.3e-05 |       0.999877 |            64 |           2 |           128 |           2 |            4 |          4 |             6.4 |            12.8 |          409.6 |              0.2 |             0.4 |    109.44 |      0.25 |       3.54995 | 40.1165 |
 
-
-
-
-
-
-
-
-
-
-## Issues
-
-% Discuss any challenges or problems encountered during the project and how they were addressed.
-
-*(Content to be added.)*
 
 ---
 
