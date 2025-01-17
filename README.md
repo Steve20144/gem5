@@ -477,7 +477,6 @@ Here are the results for each benchmark simulation. The Cache associativities we
    - However, beyond certain cache size thresholds (e.g., L2 > 2MB), the improvements in CPI and miss rates begin to diminish, suggesting workload-specific memory access patterns.
 
 ## BZIP2
-# Bzip2 Simulation Results
 
 | Benchmark Name                                                            | CPI       | L1 Data Cache Miss Rate | L1 Instruction Cache Miss Rate | L2 Cache Miss Rate |
 |---------------------------------------------------------------------------|-----------|--------------------------|--------------------------------|---------------------|
@@ -656,7 +655,7 @@ The exercise states that it is necessary to define an abstract value for the cos
     # Calculate the total cost
     df["Cost"] = 0.5 * (0.7 * df["M_cache"] + 0.3 * df["A_cache"]) + 0.5 * df["Performance"]
 ```    
-## Tables for **sjeng** and **hmmer**
+## Tables for **sjeng**, **hmmer** and **bzip2**
 | Benchmarks                                                                    |     CPI |   L1d_miss_rate |   L1i_miss_rate |   L2_miss_rate |   L1i_size_kB |   L1i_assoc |   L1d_size_kB |   L1d_assoc |   L2_size_MB |   L2_assoc |   L1i_size_cost |   L1d_size_cost |   L2_size_cost |   L1i_assoc_cost |   L2_assoc_cost |   M_cache |   A_cache |   Performance |    Cost |
 |:------------------------------------------------------------------------------|--------:|----------------:|----------------:|---------------:|--------------:|------------:|--------------:|------------:|-------------:|-----------:|----------------:|----------------:|---------------:|-----------------:|----------------:|----------:|----------:|--------------:|--------:|
 | specsjeng_l1i32kB_l1iassoc2_l1d64kB_l1dassoc2_l22MB_l2assoc4_line64_cpu1GHz   | 7.04028 |        0.121831 |         2e-05   |       0.999972 |            32 |           2 |            64 |           2 |            2 |          4 |             3.2 |             6.4 |          204.8 |              0.2 |             0.4 |     54.72 |      0.25 |       5.00647 | 21.6927 |
@@ -698,6 +697,18 @@ The exercise states that it is necessary to define an abstract value for the cos
 | spechmmer_l1i64kB_l1iassoc2_l1d64kB_l1dassoc2_l24MB_l2assoc4_line128_cpu1GHz  | 1.17978 |        0.00088  |        8.2e-05  |       0.079899 |            64 |           2 |            64 |           2 |            4 |          4 |             6.4 |             6.4 |          409.6 |              0.2 |             0.4 |    107.2  |      0.25 |      0.830779 | 37.9729 |
 | spechmmer_l1i64kB_l1iassoc2_l1d128kB_l1dassoc2_l24MB_l2assoc4_line64_cpu1GHz  | 1.18329 |        0.000695 |        8.7e-05  |       0.193925 |            64 |           2 |           128 |           2 |            4 |          4 |             6.4 |            12.8 |          409.6 |              0.2 |             0.4 |    109.44 |      0.25 |      0.840048 | 38.7615 |
 | spechmmer_l1i64kB_l1iassoc2_l1d128kB_l1dassoc2_l24MB_l2assoc4_line128_cpu1GHz | 1.17834 |        0.000387 |        8.2e-05  |       0.182442 |            64 |           2 |           128 |           2 |            4 |          4 |             6.4 |            12.8 |          409.6 |              0.2 |             0.4 |    109.44 |      0.25 |      0.83585  | 38.7594 |
+
+---
+
+| Benchmark Name                                                            | CPI       | L1d Miss Rate | L1i Miss Rate | L2 Miss Rate | L1i Size (kB) | L1i Assoc | L1d Size (kB) | L1d Assoc | L2 Size (MB) | L2 Assoc | L1i Size Cost | L1d Size Cost | L2 Size Cost | L1i Assoc Cost | L2 Assoc Cost | M Cache | A Cache | Performance | Cost       |
+|---------------------------------------------------------------------------|-----------|---------------|---------------|--------------|---------------|-----------|---------------|-----------|--------------|----------|---------------|---------------|--------------|----------------|---------------|---------|---------|-------------|------------|
+| specbzip_l1i64kB_l1iassoc2_l1d128kB_l1dassoc2_l24MB_l2assoc4_line128_cpu1GHz | 1.564919 | 0.010685      | 0.000056      | 0.209911     | 64            | 2         | 128           | 2         | 4            | 4        | 6.4           | 12.8          | 409.6        | 0.2            | 0.4           | 109.44  | 0.25    | 1.109646    | 38.896323  |
+| specbzip_l1i64kB_l1iassoc2_l1d64kB_l1dassoc2_l24MB_l2assoc4_line128_cpu1GHz  | 1.597315 | 0.014274      | 0.000056      | 0.154595     | 64            | 2         | 64            | 2         | 4            | 4        | 6.4           | 6.4           | 409.6        | 0.2            | 0.4           | 107.20  | 0.25    | 1.129542    | 38.122271  |
+| specbzip_l1i64kB_l1iassoc2_l1d128kB_l1dassoc2_l22MB_l2assoc4_line128_cpu1GHz | 1.573925 | 0.010702      | 0.000056      | 0.236481     | 64            | 2         | 128           | 2         | 2            | 4        | 6.4           | 12.8          | 204.8        | 0.2            | 0.4           | 58.24   | 0.25    | 1.117547    | 20.980273  |
+| specbzip_l1i64kB_l1iassoc2_l1d64kB_l1dassoc2_l22MB_l2assoc4_line128_cpu1GHz  | 1.606366 | 0.014290      | 0.000056      | 0.174167     | 64            | 2         | 64            | 2         | 2            | 4        | 6.4           | 6.4           | 204.8        | 0.2            | 0.4           | 56.00   | 0.25    | 1.137055    | 20.206027  |
+| specbzip_l1i64kB_l1iassoc2_l1d128kB_l1dassoc2_l24MB_l2assoc4_line64_cpu1GHz  | 1.573904 | 0.010701      | 0.000067      | 0.236486     | 64            | 2         | 128           | 2         | 4            | 4        | 6.4           | 12.8          | 409.6        | 0.2            | 0.4           | 109.44  | 0.25    | 1.117533    | 38.900267  |
+| specbzip_l1i64kB_l1iassoc2_l1d128kB_l1dassoc2_l24MB_l2assoc4_line64_cpu1GHz  | 1.581525 | 0.011621      | 0.000077      | 0.363007     | 64            | 2         | 128           | 2         | 4            | 4        | 6.4           | 12.8          | 409.6        | 0.2            | 0.4           | 109.44  | 0.25    | 1.117533    | 38.900267  |
+| specbzip_l1i64kB_l1iassoc2_l1d64kB_l1dassoc2_l24MB_l2assoc4_line64_cpu1GHz   | 1.609942 | 0.014672      | 0.000077      | 0.282140     | 64            | 2         | 64            | 2         | 4            | 4        | 6.4           | 6.4           | 409.6        | 0.2            | 0.4           | 107.20  | 0.25    | 1.129542    | 38.122271  |
 
 ---
 
