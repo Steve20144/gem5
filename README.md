@@ -479,7 +479,6 @@ Here are the results for each benchmark simulation. The Cache associativities we
 
 
 ## MCF
-Here is a table that compares the results of the **mcf** benchmark for different hardware configurations:
 
 | **Configuration**                             | **CPI**   | **L1 D-Cache Miss Rate** | **L1 I-Cache Miss Rate** | **L2 Cache Miss Rate** |
 |-----------------------------------------------|-----------|--------------------------|--------------------------|------------------------|
@@ -507,8 +506,6 @@ Here is a table that compares the results of the **mcf** benchmark for different
 
 
 ## SJENG
-For this particular benchmark, the CPI as well as the L2 cache miss-rate was particularly high. This implied that the decision to keep cache associativities constant was not working for this particular Benchmark. 
-### Associativy Constant
 | **Configuration**                             | **CPI**    | **L1 D-Cache Miss Rate** | **L1 I-Cache Miss Rate** | **L2 Cache Miss Rate** |
 |-----------------------------------------------|------------|--------------------------|--------------------------|------------------------|
 | specsjeng_l1i32kB_l1d64kB_l22MB_line64        | 7.040276   | 0.121831                 | 0.000020                 | 0.999972              |
