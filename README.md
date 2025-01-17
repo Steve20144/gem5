@@ -617,7 +617,7 @@ where:
 
 This formulation balances circuit size and system speed to optimize the cost function (`C`) based on the given parameters and weights.
 
-## Application to the benchmarks.
+## Applying the function
 
 
 
