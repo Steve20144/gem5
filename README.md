@@ -624,6 +624,26 @@ $$ C = 0.7 \cdot \left( 0.4 \cdot M_{L1i} + 0.35 \cdot M_{L1d} + 0.25 \cdot M_{L
 
 ---
 
+The exercise states that it is necessary to define an abstract value for the cost function. This value in this case is **omega** and it can be seen on this particular code snippet.
+
+```python
+
+ # Normalize cache sizes and associativity based on omega
+    df["L1i_size_cost"] = (df["L1i_size_kB"] * 1) / omega  # Assume 1 kB = omega cost
+    df["L1d_size_cost"] = (df["L1d_size_kB"] * 1) / omega
+    df["L2_size_cost"] = (df["L2_size_MB"] * 1024) / omega  # Convert MB to kB
+    
+    df["L1i_assoc_cost"] = df["L1i_assoc"] / omega
+    df["L2_assoc_cost"] = df["L2_assoc"] / omega
+    
+    # Calculate the components of the cost function
+    df["M_cache"] = 0.4 * df["L1i_size_cost"] + 0.35 * df["L1d_size_cost"] + 0.25 * df["L2_size_cost"]
+    df["A_cache"] = 0.75 * df["L1i_assoc_cost"] + 0.25 * df["L2_assoc_cost"]
+    df["Performance"] = 0.7 * df["CPI"] + 0.3 * (0.5 * df["L1d_miss_rate"] + 0.3 * df["L1i_miss_rate"] + 0.2 * df["L2_miss_rate"])
+    
+    # Calculate the total cost
+    df["Cost"] = 0.5 * (0.7 * df["M_cache"] + 0.3 * df["A_cache"]) + 0.5 * df["Performance"]
+    
 
 
 
