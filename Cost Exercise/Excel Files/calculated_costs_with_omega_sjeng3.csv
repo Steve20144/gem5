@@ -1,0 +1,7 @@
+Benchmarks,CPI,L1d_miss_rate,L1i_miss_rate,L2_miss_rate,L1i_size_kB,L1i_assoc,L1d_size_kB,L1d_assoc,L2_size_MB,L2_assoc,L1i_size_cost,L1d_size_cost,L2_size_cost,L1i_assoc_cost,L2_assoc_cost,M_cache,A_cache,Performance,Cost
+specsjeng_l1i64kB_l1iassoc4_l1d64kB_l1dassoc4_l24MB_l2assoc8_line128_cpu1GHz_new,4.972548,0.060918,1.3e-05,0.999973,64,4,64,4,4,8,6.4,6.4,409.6,0.4,0.8,107.2,0.5,3.5499208499999995,39.369960425
+specsjeng_l1i64kB_l1iassoc4_l1d64kB_l1dassoc4_l24MB_l2assoc8_line256_cpu1GHz_new,3.714674,0.030461,9e-06,0.99995,64,4,64,4,4,8,6.4,6.4,409.6,0.4,0.8,107.2,0.5,2.66483876,38.927419379999996
+specsjeng_l1i64kB_l1iassoc4_l1d64kB_l1dassoc4_l24MB_l2assoc16_line128_cpu1GHz_new,4.972063,0.060918,1.3e-05,0.999973,64,4,64,4,4,16,6.4,6.4,409.6,0.4,1.6,107.2,0.7000000000000001,3.54958135,39.39979067499999
+specsjeng_l1i64kB_l1iassoc4_l1d64kB_l1dassoc4_l24MB_l2assoc16_line256_cpu1GHz_new,3.714674,0.030461,9e-06,0.99995,64,4,64,4,4,16,6.4,6.4,409.6,0.4,1.6,107.2,0.7000000000000001,2.66483876,38.95741937999999
+specsjeng_l1i64kB_l1iassoc4_l1d64kB_l1dassoc4_l24MB_l2assoc16_line_cpu1GHz_new_256cacheline,3.714674,0.030461,9e-06,0.99995,64,4,64,4,4,16,6.4,6.4,409.6,0.4,1.6,107.2,0.7000000000000001,2.66483876,38.95741937999999
+specsjeng_l1i64kB_l1iassoc4_l1d64kB_l1dassoc4_l24MB_l2assoc8_line_cpu1GHz_new_256cacheline,3.714674,0.030461,9e-06,0.99995,64,4,64,4,4,8,6.4,6.4,409.6,0.4,0.8,107.2,0.5,2.66483876,38.927419379999996
