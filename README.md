@@ -476,6 +476,19 @@ Here are the results for each benchmark simulation. The Cache associativities we
    - Larger cache sizes (both L1 and L2) combined with wider cache lines lead to consistent improvements across all metrics.
    - However, beyond certain cache size thresholds (e.g., L2 > 2MB), the improvements in CPI and miss rates begin to diminish, suggesting workload-specific memory access patterns.
 
+## BZIP2
+# Bzip2 Simulation Results
+
+| Benchmark Name                                                            | CPI       | L1 Data Cache Miss Rate | L1 Instruction Cache Miss Rate | L2 Cache Miss Rate |
+|---------------------------------------------------------------------------|-----------|--------------------------|--------------------------------|---------------------|
+| specbzip_l1i64kB_l1iassoc2_l1d128kB_l1dassoc2_l24MB_l2assoc4_line128_cpu1GHz | 1.564919 | 0.010685                | 0.000056                      | 0.209911           |
+| specbzip_l1i64kB_l1iassoc2_l1d64kB_l1dassoc2_l24MB_l2assoc4_line128_cpu1GHz  | 1.597315 | 0.014274                | 0.000056                      | 0.154595           |
+| specbzip_l1i64kB_l1iassoc2_l1d128kB_l1dassoc2_l22MB_l2assoc4_line128_cpu1GHz | 1.573925 | 0.010702                | 0.000056                      | 0.236481           |
+| specbzip_l1i64kB_l1iassoc2_l1d64kB_l1dassoc2_l22MB_l2assoc4_line128_cpu1GHz  | 1.606366 | 0.014290                | 0.000056                      | 0.174167           |
+| specbzip_l1i64kB_l1iassoc2_l1d128kB_l1dassoc2_l24MB_l2assoc4_line128_cpu1GHz | 1.573904 | 0.010701                | 0.000067                      | 0.236486           |
+| specbzip_l1i64kB_l1iassoc2_l1d128kB_l1dassoc2_l24MB_l2assoc4_line64_cpu1GHz  | 1.581525 | 0.011621                | 0.000077                      | 0.363007           |
+| specbzip_l1i64kB_l1iassoc2_l1d64kB_l1dassoc2_l24MB_l2assoc4_line128_cpu1GHz  | 1.606309 | 0.014290                | 0.000067                      | 0.174178           |
+| specbzip_l1i64kB_l1iassoc2_l1d64kB_l1dassoc2_l24MB_l2assoc4_line64_cpu1GHz   | 1.609942 | 0.014672                | 0.000077                      | 0.282140           |
 
 
 ## MCF
