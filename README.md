@@ -606,6 +606,27 @@ where:
 
 This formulation balances circuit size and system speed to optimize the cost function (`C`) based on the given parameters and weights.
 
+## Application to the benchmarks.
+
+
+
+---
+
+The cost function is defined as:
+
+\[
+C = 0.7 \cdot \left( 0.4 \cdot M_{L1i} + 0.35 \cdot M_{L1d} + 0.25 \cdot M_{L2} \right) + 0.3 \cdot \left( 0.75 \cdot A_{L1} + 0.25 \cdot A_{L2} \right)
+\]
+
+- **0.7**: The weight assigned to the miss rate component.
+- **0.3**: The weight assigned to the access rate component.
+- **0.4, 0.35, and 0.25**: The relative contributions of the L1 instruction cache, L1 data cache, and L2 cache to the miss rate, respectively.
+- **0.75 and 0.25**: The relative contributions of the L1 and L2 caches to the access rate, respectively.
+
+---
+
+
+
 
 
 
